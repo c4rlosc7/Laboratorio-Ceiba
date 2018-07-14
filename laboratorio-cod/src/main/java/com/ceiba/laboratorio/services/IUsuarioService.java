@@ -1,8 +1,9 @@
-package com.ceiba.servicios;
+package com.ceiba.laboratorio.services;
 
 import java.util.List;
 
-import com.ceiba.entidades.Usuario;
+import com.ceiba.laboratorio.entity.Usuario;
+
 
 public interface IUsuarioService {
 	
@@ -15,3 +16,4 @@ public interface IUsuarioService {
 	public void delete(Long id);
 
 }
+ 

@@ -1,4 +1,4 @@
-package com.ceiba.entidades;
+package com.ceiba.laboratorio.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -12,11 +12,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.ceiba.utilidades.EnumTipoInmueble;
+import com.ceiba.laboratorio.util.EnumTipoInmueble;
 
 
 @Entity
-@Table(name="inmueble")
+@Table(name="INMUEBLES") 
 public class Inmueble implements Serializable {
 	
 	/**
@@ -29,13 +29,15 @@ public class Inmueble implements Serializable {
 	private Long id;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-	private Usuario propietario;
+	private Usuario usuario;
 	
 	private String direccion;
 	
 	private EnumTipoInmueble tipoInmueble;
 	
 	private BigDecimal valorInmueble;
+	
+	private BigDecimal valorPrima;
 	
 	private double metrajeInmueble;
 	
@@ -111,6 +113,24 @@ public class Inmueble implements Serializable {
 		this.estado = estado;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	
+
+	public BigDecimal getValorPrima() {
+		return valorPrima;
+	}
+
+	public void setValorPrima(BigDecimal valorPrima) {
+		this.valorPrima = valorPrima;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -130,11 +150,12 @@ public class Inmueble implements Serializable {
 		temp = Double.doubleToLongBits(metrajeInmueble);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result
-				+ ((propietario == null) ? 0 : propietario.hashCode());
-		result = prime * result
 				+ ((tipoInmueble == null) ? 0 : tipoInmueble.hashCode());
+		result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
 		result = prime * result
 				+ ((valorInmueble == null) ? 0 : valorInmueble.hashCode());
+		result = prime * result
+				+ ((valorPrima == null) ? 0 : valorPrima.hashCode());
 		return result;
 	}
 
@@ -174,31 +195,38 @@ public class Inmueble implements Serializable {
 		if (Double.doubleToLongBits(metrajeInmueble) != Double
 				.doubleToLongBits(other.metrajeInmueble))
 			return false;
-		if (propietario == null) {
-			if (other.propietario != null)
-				return false;
-		} else if (!propietario.equals(other.propietario))
-			return false;
 		if (tipoInmueble != other.tipoInmueble)
+			return false;
+		if (usuario == null) {
+			if (other.usuario != null)
+				return false;
+		} else if (!usuario.equals(other.usuario))
 			return false;
 		if (valorInmueble == null) {
 			if (other.valorInmueble != null)
 				return false;
 		} else if (!valorInmueble.equals(other.valorInmueble))
 			return false;
+		if (valorPrima == null) {
+			if (other.valorPrima != null)
+				return false;
+		} else if (!valorPrima.equals(other.valorPrima))
+			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Inmueble [id=" + id + ", propietario=" + propietario
-				+ ", direccion=" + direccion + ", tipoInmueble=" + tipoInmueble
-				+ ", valorInmueble=" + valorInmueble + ", metrajeInmueble="
-				+ metrajeInmueble + ", estratoInmueble=" + estratoInmueble
-				+ ", fechaCreacion=" + fechaCreacion + ", fechaModificacion="
-				+ fechaModificacion + ", estado=" + estado + "]";
+		return "Inmueble [id=" + id + ", usuario=" + usuario + ", direccion="
+				+ direccion + ", tipoInmueble=" + tipoInmueble
+				+ ", valorInmueble=" + valorInmueble + ", valorPrima="
+				+ valorPrima + ", metrajeInmueble=" + metrajeInmueble
+				+ ", estratoInmueble=" + estratoInmueble + ", fechaCreacion="
+				+ fechaCreacion + ", fechaModificacion=" + fechaModificacion
+				+ ", estado=" + estado + "]";
 	}
 
+	
 	
 
 }

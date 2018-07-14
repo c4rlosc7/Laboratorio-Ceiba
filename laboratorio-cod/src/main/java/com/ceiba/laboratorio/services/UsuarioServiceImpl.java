@@ -1,12 +1,14 @@
-package com.ceiba.servicios;
+package com.ceiba.laboratorio.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ceiba.dao.IUsuarioDao;
-import com.ceiba.entidades.Usuario;
+import com.ceiba.laboratorio.dao.IUsuarioDao;
+import com.ceiba.laboratorio.entity.Usuario;
 
+@Service
 public class UsuarioServiceImpl implements IUsuarioService {
 	
 	private IUsuarioDao usuarioDao;
@@ -36,7 +38,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	@Transactional
 	public void delete(Long id) {
 		// TODO Auto-generated method stub
-		usuarioDao.deleteById(null);
+		usuarioDao.deleteById(id);
 	}
 
 }

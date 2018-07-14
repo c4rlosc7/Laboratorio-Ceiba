@@ -1,4 +1,4 @@
-package com.ceiba.entidades;
+package com.ceiba.laboratorio.entity;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -7,10 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="usuario")
+@Table(name="usuarios")
 public class Usuario implements Serializable{
 
 	/**
