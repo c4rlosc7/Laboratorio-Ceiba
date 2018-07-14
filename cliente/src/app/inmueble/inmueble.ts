@@ -1,4 +1,5 @@
 export class Inmueble {
+    id: number;
     direccion: string;
     tipo: number;
     valorInmueble: number;

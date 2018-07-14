@@ -1,4 +1,5 @@
 export class Prima {
+    id: number;
     idUsuario: number;
     idInmueble: number;
     valorPrima: number;

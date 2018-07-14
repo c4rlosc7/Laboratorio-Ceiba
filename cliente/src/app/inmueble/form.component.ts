@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Inmueble } from './inmueble';
 
 @Component({
   selector: 'app-form',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  private titulo: String = 'Registro';
+  private tituloRegistro: String = 'Formulario de registro inmueble';
+  private inmueble: Inmueble;
 
   constructor() { }
 
