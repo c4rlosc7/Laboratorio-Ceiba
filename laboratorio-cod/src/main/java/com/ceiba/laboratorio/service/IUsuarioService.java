@@ -1,8 +1,8 @@
-package com.ceiba.servicios;
+package com.ceiba.laboratorio.service;
 
 import java.util.List;
 
-import com.ceiba.entidades.Usuario;
+import com.ceiba.laboratorio.entity.Usuario;
 
 public interface IUsuarioService {
 	

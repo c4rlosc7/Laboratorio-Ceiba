@@ -1,4 +1,4 @@
-package com.ceiba.entidades;
+package com.ceiba.laboratorio.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.ceiba.utilidades.EnumTipoInmueble;
+import com.ceiba.laboratorio.util.EnumTipoInmueble;
 
 
 @Entity

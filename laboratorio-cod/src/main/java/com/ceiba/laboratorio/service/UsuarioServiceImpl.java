@@ -1,11 +1,11 @@
-package com.ceiba.servicios;
+package com.ceiba.laboratorio.service;
 
 import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ceiba.dao.IUsuarioDao;
-import com.ceiba.entidades.Usuario;
+import com.ceiba.laboratorio.dao.IUsuarioDao;
+import com.ceiba.laboratorio.entity.Usuario;
 
 public class UsuarioServiceImpl implements IUsuarioService {
 	

@@ -1,4 +1,4 @@
-package com.ceiba.utilidades;
+package com.ceiba.laboratorio.util;
 
 public enum EnumTipoInmueble {
 	

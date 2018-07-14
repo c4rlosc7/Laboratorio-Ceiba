@@ -1,4 +1,4 @@
-package com.ceiba.entidades;
+package com.ceiba.laboratorio.entity;
 
 import java.io.Serializable;
 import java.util.Date;
