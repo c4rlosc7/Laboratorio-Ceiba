@@ -10,6 +10,13 @@
           <input type="text" class="form-control" [(ngModel)]="usuario.nombre" name="nombre">
         </div>
       </div>
+      <!-- Usuario -->
+      <div class="form-group row">
+        <label for="usuario" class="col-form-label col-sm-2">Usuario</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="usuario.usuario" name="usuario">
+        </div>
+      </div>       
       <!-- Cedula -->
       <div class="form-group row">
         <label for="cedula" class="col-form-label col-sm-2">Cedula</label>
@@ -21,7 +28,7 @@
       <div class="form-group row">
         <label for="password" class="col-form-label col-sm-2">Password</label>
         <div class="col-sm-6">
-          <input type="password" class="form-control" [(ngModel)]="usuario.password" name="password">
+          <input type="password" class="form-control" [(ngModel)]="usuario.contrasena" name="password">
         </div>
       </div>
 

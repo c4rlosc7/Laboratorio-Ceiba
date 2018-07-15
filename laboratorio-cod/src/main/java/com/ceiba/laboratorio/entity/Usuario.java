@@ -10,6 +10,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Clase que representa la entidad Usuario
+ * 
+ * @author Lenovo
+ *
+ */
 @Entity
 @Table(name ="usuarios")
 public class Usuario implements Serializable{
@@ -19,6 +25,9 @@ public class Usuario implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/*
+	 * ATRIBUTOS DE LA ENTIDAD
+	 */
 	@Id
 	@Column(name = "ID")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "id_Sequence")
@@ -39,6 +48,9 @@ public class Usuario implements Serializable{
 	
 	private String contrasena;
 	
+	/*
+	 * METODOS GET Y SET
+	 */
 	public Long getId() {
 		return id;
 	}
@@ -86,7 +98,9 @@ public class Usuario implements Serializable{
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
-
+	/*
+	 * METODOS HASHCODE, EQUALS, TOSTRING
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;

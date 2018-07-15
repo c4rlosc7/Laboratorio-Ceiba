@@ -1,3 +1,5 @@
+import { Usuario } from '../usuario/usuario';
+
 export class Inmueble {
     id: number;
     direccion: string;
@@ -7,4 +9,7 @@ export class Inmueble {
     estrato: number;
     fechaCreacion: string;
     fechaModificacion: string;
+    usuario: Usuario;
+    valorPrima: number;
+
 }

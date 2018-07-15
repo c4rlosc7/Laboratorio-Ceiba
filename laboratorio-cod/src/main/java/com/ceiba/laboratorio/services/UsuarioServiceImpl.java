@@ -2,6 +2,7 @@ package com.ceiba.laboratorio.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,6 +12,7 @@ import com.ceiba.laboratorio.entity.Usuario;
 @Service
 public class UsuarioServiceImpl implements IUsuarioService {
 	
+	@Autowired
 	private IUsuarioDao usuarioDao;
 
 	@Override
@@ -39,6 +41,12 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	public void delete(Long id) {
 		// TODO Auto-generated method stub
 		usuarioDao.deleteById(id);
+	}
+
+	@Override
+	public Usuario validarIdentidad(String usuario, String contrasena) {
+		// TODO Auto-generated method stub
+		return usuarioDao.validarIdentidad(usuario,contrasena);
 	}
 
 }

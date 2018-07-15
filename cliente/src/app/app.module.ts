@@ -14,9 +14,10 @@ import { UsuarioService } from './usuario/usuario.service';
 import { FormInmuebleComponent } from './inmueble/form-inmueble.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: '', redirectTo: '/', pathMatch: 'full'},
   {path: 'usuario', component: FormComponent},
-  {path: 'inmueble', component: FormInmuebleComponent}
+  {path: 'inmueble', component: FormInmuebleComponent},
+  {path: 'inmueble-det', component: InmuebleComponent }
 ];
 
 @NgModule({
