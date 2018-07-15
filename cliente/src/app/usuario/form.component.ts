@@ -34,11 +34,11 @@ export class FormComponent implements OnInit {
    * Método que registra un usuario
    */
   public register(): void {
-    console.log(this.usuario);
     this.usuarioService.create(this.usuario)
       .subscribe(usuario => {
         this.router.navigate(['/inmueble']);
-        alert(usuario);
+        console.log(usuario);
+        alert(usuario.nombre);
         sessionStorage.setItem('usuarioLogin', JSON.stringify(usuario));
       });
   }

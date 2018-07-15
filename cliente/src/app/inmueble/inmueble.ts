@@ -10,5 +10,6 @@ export class Inmueble {
     fechaCreacion: string;
     fechaModificacion: string;
     usuario: Usuario;
+    valorPrima: number;
 
 }

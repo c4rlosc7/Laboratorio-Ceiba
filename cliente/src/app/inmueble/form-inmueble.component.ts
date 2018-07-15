@@ -33,12 +33,14 @@ export class FormInmuebleComponent implements OnInit {
    * Método
    */
   public crear(): void {
-    console.log(this.inmueble);
     this.usuarioLog = JSON.parse(sessionStorage.getItem('usuarioLogin'));
     this.inmueble.usuario = this.usuarioLog;
+    let prima: number = (this.inmueble.valorInmueble * 0.05) / 12 + ((this.inmueble.valorInmueble * 0.05) / 12) * 0.0001;
+    this.inmueble.valorPrima = prima;
     this.inmuebleService.create(this.inmueble)
       .subscribe(inmueble => {
         this.router.navigate(['/inmueble-det']);
+        console.log(inmueble, prima);
         alert('Exitoso');
       });
   }

@@ -34,7 +34,7 @@ public class InmuebleServiceImpl implements IInmuebleService {
 	@Override
 	@Transactional
 	public Inmueble save(Inmueble inmueble) {
-		inmueble.setValorPrima(calcularPrima(inmueble.getValorInmueble()));
+		//inmueble.setValorPrima(calcularPrima(inmueble.getValorInmueble()));
 		return inmuebleDao.save(inmueble);
 	}
 
@@ -57,7 +57,8 @@ public class InmuebleServiceImpl implements IInmuebleService {
 		BigDecimal valor5PorCiento= new BigDecimal(Constants.CONSTANTE_5_PORCIENTO_INMUEBLE);
 		BigDecimal valor1PorCiento= new BigDecimal(Constants.COMISION_1_PORCIENTO_INMUEBLE);
 		BigDecimal inmueblePor5Porciento= valorInmueble.multiply(valor5PorCiento);
-		BigDecimal dividir12=inmueblePor5Porciento.divide(new BigDecimal(12));
+		BigDecimal doce = new BigDecimal(12);
+		BigDecimal dividir12=inmueblePor5Porciento.divide(doce);
 		return dividir12.multiply(valor1PorCiento);
 	}
 
