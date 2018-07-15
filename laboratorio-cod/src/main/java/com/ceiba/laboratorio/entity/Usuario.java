@@ -3,15 +3,17 @@ package com.ceiba.laboratorio.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema ="usuarios")
+@Table(name ="usuarios")
 public class Usuario implements Serializable{
 
 	/**
@@ -20,7 +22,9 @@ public class Usuario implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@Column(name = "ID")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "id_Sequence")
+	@SequenceGenerator(name = "id_Sequence", sequenceName = "ID_SEQ")
 	private Long id;
 	
 	private String nombre;
@@ -33,6 +37,10 @@ public class Usuario implements Serializable{
 	
 	private boolean estado;
 
+	private String usuario;
+	
+	private String contrasena;
+	
 	public Long getId() {
 		return id;
 	}
@@ -143,6 +151,22 @@ public class Usuario implements Serializable{
 				+ cedula + ", fechaCreacion=" + fechaCreacion
 				+ ", fechaModificacion=" + fechaModificacion + ", estado="
 				+ estado + "]";
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+	public String getContrasena() {
+		return contrasena;
+	}
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
 	
 	
