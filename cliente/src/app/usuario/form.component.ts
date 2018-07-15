@@ -35,6 +35,12 @@ export class FormComponent implements OnInit {
    */
   public register(): void {
     console.log(this.usuario);
+    this.usuarioService.create(this.usuario)
+      .subscribe(usuario => {
+        this.router.navigate(['/inmueble']);
+        alert(usuario);
+        sessionStorage.setItem('usuarioLogin', JSON.stringify(usuario));
+      });
   }
 
   /**
