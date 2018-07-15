@@ -14,6 +14,8 @@ public interface IUsuarioService {
 	public Usuario save (Usuario usuario);
 	
 	public void delete(Long id);
+	
+	public Usuario validarIdentidad(String usuario, String contrasena);
 
 }
  

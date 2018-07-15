@@ -18,42 +18,54 @@ import org.hibernate.annotations.GenericGenerator;
 
 import com.ceiba.laboratorio.util.EnumTipoInmueble;
 
-
+/**
+ * Clase que representa la entidad Inmuebles
+ * 
+ * @author Lenovo
+ *
+ */
 @Entity
-@Table(name ="inmuebles") 
+@Table(name = "inmuebles")
 public class Inmueble implements Serializable {
-	
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/*
+	 * Definicion de atributos de la entidad
+	 */
 	@Id
 	@Column(name = "ID")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "id_Sequence")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_Sequence")
 	@SequenceGenerator(name = "id_Sequence", sequenceName = "ID_SEQ")
 	private Long id;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
+
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Usuario usuario;
-	
+
 	private String direccion;
-	
+
 	private EnumTipoInmueble tipoInmueble;
-	
+
 	private BigDecimal valorInmueble;
-	
+
 	private BigDecimal valorPrima;
-	
+
 	private double metrajeInmueble;
-	
+
 	private int estratoInmueble;
-	
+
 	private Date fechaCreacion;
-	
+
 	private Date fechaModificacion;
-	
+
 	private boolean estado;
+
+	/*
+	 * METODOS GET Y SET
+	 */
 
 	public String getDireccion() {
 		return direccion;
@@ -127,8 +139,6 @@ public class Inmueble implements Serializable {
 		this.id = id;
 	}
 
-	
-
 	public BigDecimal getValorPrima() {
 		return valorPrima;
 	}
@@ -137,6 +147,9 @@ public class Inmueble implements Serializable {
 		this.valorPrima = valorPrima;
 	}
 
+	/*
+	 * METODOS HASCODE, EQUALS, TOSTRING
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -231,8 +244,5 @@ public class Inmueble implements Serializable {
 				+ fechaCreacion + ", fechaModificacion=" + fechaModificacion
 				+ ", estado=" + estado + "]";
 	}
-
-	
-	
 
 }
