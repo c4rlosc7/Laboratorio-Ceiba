@@ -1,5 +1,7 @@
 package com.ceiba.laboratorio.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,6 +22,9 @@ public class Reclamacion {
 	
 	private String reclamacion;
 
+	private Date fechaReclamacion;
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -34,5 +39,13 @@ public class Reclamacion {
 
 	public void setReclamacion(String reclamacion) {
 		this.reclamacion = reclamacion;
+	}
+
+	public Date getFechaReclamacion() {
+		return fechaReclamacion;
+	}
+
+	public void setFechaReclamacion(Date fechaReclamacion) {
+		this.fechaReclamacion = fechaReclamacion;
 	}
 }

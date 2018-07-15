@@ -1,5 +1,6 @@
 package com.ceiba.laboratorio.controllers;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import com.ceiba.laboratorio.services.IUsuarioService;
 import com.ceiba.laboratorio.services.InmuebleServiceImpl;
 import com.ceiba.laboratorio.services.ReclamacionServiceImpl;
 import com.ceiba.laboratorio.services.UsuarioServiceImpl;
+import com.ceiba.laboratorio.util.EnumTipoInmueble;
 
 
 @CrossOrigin(origins={"*"})
@@ -36,12 +38,17 @@ public class LaboratorioController {
 	
 	
 	@PostMapping("/usuarios")
-	private void crearUsuario(@RequestBody  Usuario usuario){
-		 usuarioService.save(usuario);
+	private Usuario crearUsuario(@RequestBody  Usuario usuario){
+		 usuario.setFechaCreacion(new Date());
+		 usuario.setEstado(true);
+		 return usuarioService.save(usuario);
 	}
 	@PostMapping("/inmuebles")
-	private void crearInmueble(@RequestBody Inmueble inmueble){
-		 inmuebleService.save(inmueble);
+	private Inmueble crearInmueble(@RequestBody Inmueble inmueble){
+		inmueble.setFechaCreacion(new Date());
+		inmueble.setEstado(true);
+		inmueble.setTipoInmueble(EnumTipoInmueble.CASA);
+		 return inmuebleService.save(inmueble);
 	}
 	
 	@GetMapping("/inmuebles")
@@ -59,6 +66,10 @@ public class LaboratorioController {
 		return inmuebleService.validarPrimaExistente(idInmueble,idUsuario);
 	}
 	
+	@GetMapping("/loginUsuario/{usuario}/{contrasena}")
+	private Usuario loginUsuario(@PathVariable String usuario,@PathVariable String contrasena){
+		return usuarioService.validarIdentidad(usuario,contrasena);
+	}
 	
 	
 	

@@ -2,6 +2,7 @@ package com.ceiba.laboratorio.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,6 +12,7 @@ import com.ceiba.laboratorio.entity.Reclamacion;
 @Service
 public class ReclamacionServiceImpl implements IReclamacionService{
 
+	@Autowired
 	private IReclamacionDao reclamacionDao;
 	
 	@Override
