@@ -1,0 +1,61 @@
+<!-- Inmueble -->
+<div class="card bg-light text-dark my-4" *ngIf="!showLogin">
+  <div class="card-header">{{ tituloRegistro }}</div>
+  <div class="card-body">
+    <form (ngSubmit) = "crear()">
+      <!-- Tipo Inmueble -->
+      <div class="form-group row">
+        <label for="tipo" class="col-form-label col-sm-2">Tipo Inmueble</label>
+        <div class="col-sm-6">
+          <select [(ngModel)]="inmueble.tipo" class="form-control" name="tipo">
+            <option *ngFor="let tipo of tipos" [value]="tipo.id">
+              {{tipo.descripcion}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <!-- Descripcion -->
+      <div class="form-group row">
+        <label for="descripcion" class="col-form-label col-sm-2">Descripción</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="inmueble.descripcion" name="descripcion">
+        </div>
+      </div>
+      <!-- Valor Inmueble -->
+      <div class="form-group row">
+        <label for="valorInmueble" class="col-form-label col-sm-2">Valor Inmueble</label>
+        <div class="col-sm-6">
+          <input type="number" class="form-control" [(ngModel)]="inmueble.valorInmueble" name="valorInmueble">
+        </div>
+      </div>
+      <!-- Metraje -->
+      <div class="form-group row">
+        <label for="metraje" class="col-form-label col-sm-2">Metraje</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="inmueble.metraje" name="metraje">
+        </div>
+      </div>
+      <!-- Estrato -->
+      <div class="form-group row">
+        <label for="estrato" class="col-form-label col-sm-2">Estrato</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="inmueble.estrato" name="estrato">
+        </div>
+      </div>
+      <!-- Direccion -->
+      <div class="form-group row">
+        <label for="direccion" class="col-form-label col-sm-2">Dirección</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="inmueble.direccion" name="direccion">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <button class="btn btn-primary" role="button" type="submit">Crear</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
