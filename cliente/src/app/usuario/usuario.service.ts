@@ -14,8 +14,8 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) { }
 
-  create(usuario: Usuario): Observable<Usuario> {
+  /*create(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>(this.urlEndPoint, usuario, { headers: this.httpHeaders });
-  }
+  }*/
 
 }

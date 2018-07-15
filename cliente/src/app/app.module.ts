@@ -11,11 +11,12 @@ import { HeaderComponent } from './header/header.component';
 import { PrimaComponent } from './prima/prima.component';
 import { FormComponent } from './usuario/form.component';
 import { UsuarioService } from './usuario/usuario.service';
+import { FormInmuebleComponent } from './inmueble/form-inmueble.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/', pathMatch: 'full'},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'usuario', component: FormComponent},
-  {path: 'inmueble', component: InmuebleComponent}
+  {path: 'inmueble', component: FormInmuebleComponent}
 ];
 
 @NgModule({
@@ -25,7 +26,8 @@ const routes: Routes = [
     InmuebleComponent,
     HeaderComponent,
     PrimaComponent,
-    FormComponent
+    FormComponent,
+    FormInmuebleComponent
   ],
   imports: [
     BrowserModule,
