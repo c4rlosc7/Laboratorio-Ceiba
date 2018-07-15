@@ -11,7 +11,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="usuarios")
+@Table(schema ="usuarios")
 public class Usuario implements Serializable{
 
 	/**

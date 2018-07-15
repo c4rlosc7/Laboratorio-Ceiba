@@ -16,7 +16,7 @@ import com.ceiba.laboratorio.util.EnumTipoInmueble;
 
 
 @Entity
-@Table(name="INMUEBLES") 
+@Table(schema ="INMUEBLES") 
 public class Inmueble implements Serializable {
 	
 	/**

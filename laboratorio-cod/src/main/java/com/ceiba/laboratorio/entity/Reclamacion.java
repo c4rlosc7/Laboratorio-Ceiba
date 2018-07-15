@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="reclamaciones")
+@Table(schema ="reclamaciones")
 public class Reclamacion {
 	
 	@Id

@@ -16,7 +16,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 import com.ceiba.laboratorio.entity.Usuario;
-import com.ceiba.laboratorio.service.IUsuarioService;
+import com.ceiba.laboratorio.services.IUsuarioService;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -67,11 +67,12 @@ public class AuthFilter implements Filter{
 
 		Usuario out =  new ObjectMapper().readValue( user, Usuario.class );
 
-		Optional<Usuario> userValid = this.usuarioService.findAll().stream().
-				filter(x-> x.getUser().equals(out.getUser())&& x.getPass().equals(out.getPass()))
-				.findFirst();
+//		Optional<Usuario> userValid = this.usuarioService.findAll().stream().
+//				filter(x-> x.getUser().equals(out.getUser())&& x.getPass().equals(out.getPass()))
+//				.findFirst();
 
-		return userValid.isPresent();
+		//return userValid.isPresent();
+		return true;
 	}
 
 	@Override
