@@ -1,6 +1,5 @@
 package com.ceiba.laboratorio.entity;
 
-<<<<<<< HEAD
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,12 +31,4 @@ public class Reclamacion {
 	public void setReclamacion(String reclamacion) {
 		this.reclamacion = reclamacion;
 	}
-	
-	
-	
-=======
-
-public class Reclamacion {
-
->>>>>>> 55eef9ccd9344cd809789d086eed1c7e93bd1dc5
 }
