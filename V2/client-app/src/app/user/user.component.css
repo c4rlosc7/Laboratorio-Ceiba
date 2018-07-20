@@ -1,0 +1,10 @@
+.table-titles{
+    background-color: #8a8585;
+    color: white;
+    font-weight: bold;    
+}
+
+.row-user{
+    border-bottom: solid 1px #eae0e0;
+    padding: 10px 0;    
+}
