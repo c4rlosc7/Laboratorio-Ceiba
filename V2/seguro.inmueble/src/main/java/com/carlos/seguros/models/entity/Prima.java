@@ -1,5 +1,8 @@
 package com.carlos.seguros.models.entity;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,15 +14,21 @@ import javassist.SerialVersionUID;
 
 @Entity
 @Table(name = "primas")
-public class Prima {
+public class Prima implements Serializable {
 	
 	private static final long SerialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(name ="id_inmueble")
 	private Long idInmueble;
+	
+	@Column(name = "id_propietario")
 	private Long idPropietario;
+	
+	@Column(name = "valor_inmueble")
 	private double valorInmueble;
 	
 	/* Getters and Setters */

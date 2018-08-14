@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import javassist.SerialVersionUID;
-
+ 
 @Entity
 @Table(name = "propietarios")
 public class Propietario implements Serializable{
